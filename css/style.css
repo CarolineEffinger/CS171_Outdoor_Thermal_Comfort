@@ -1,0 +1,308 @@
+body {
+    background: #393e46;
+}
+
+body, html {
+    height: 100%;
+}
+
+#main {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.section-title
+{
+    color: white;
+    font-size: 42px;
+    font-family: "Calibri Black";
+}
+
+.main-title
+{
+    color: white;
+    font-size:65px;
+    font-family: "Calibri Black";
+}
+
+.main-text{
+    color: white;
+    font-size: 24px;
+    font-family: "Calibri Light";
+}
+
+.center {
+    margin-top: 450px;
+    margin-left: 200px;
+    text-align: left;
+    width: 800px;
+}
+
+.center-top {
+    margin-top: 70px;
+    margin-left: 200px;
+    text-align: left;
+    width: 800px;
+}
+
+section {
+    height: 100%;
+    padding: 0px;
+    width: 100%;
+}
+
+#dot-nav {
+    right: 15px;
+    top: 35%;
+    margin-top: -50px;
+    height: 100px;
+    z-index: 999;
+}
+
+#dot-nav ul {
+    list-style: none;
+}
+
+#dot-nav li {
+    position: relative;
+    background-color: #bdc3c7;
+    border: 6px solid #bdc3c7;
+    border-radius: 15px 15px 15px 15px;
+    cursor: pointer;
+    padding: 5px;
+    height: 15px;
+    margin: 10px 10px 0px 0px;
+    width: 15px;
+    vertical-align: bottom;
+}
+
+#dot-nav li.active, #dot-nav li:hover {
+    background-color: #393e46;
+}
+
+#dot-nav a {
+    outline: 0;
+    vertical-align: top;
+    margin: 0px 0px 0px 25px;
+    position: relative;
+    top: -5px;
+}
+
+.awesome-tooltip + .tooltip > .tooltip-inner {
+    /*background-color: #8e44ad;*/
+    /*color: #f5f5f5;*/
+    /*border: 3px solid #393e46;*/
+    font-size: 24px;
+    font-family: "Calibri Light";
+    background-color: transparent;
+}
+
+.awesome-tooltip + .tooltip.left > .tooltip-arrow {
+    top: 50%;
+    right: 0;
+    margin-top: -5px;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid white;
+}
+
+.awesome-tooltip
+{
+    width: 100px;
+}
+
+body {
+    font-family: 'Neuton', serif;
+}
+
+h1 {
+    font-size: 36px;
+    color: #825a5a;
+    margin-top: 40px;
+}
+
+.text-labels {
+    font-size: 20px;
+    /*font-weight: 700;*/
+    color: white;
+    /* Use color, background, set margins for offset, etc */
+}
+
+h2 {
+    color: #94a97a;
+    font-size: 24px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+
+.city-legend {
+    font-family: "Calibri Light";
+    font-size: 14px;
+    color: white;
+    background-color: #D3D3D320;
+}
+
+.text-lab {
+    font-family: "Calibri Light";
+    font-size: 14px;
+    color: white;
+}
+#cityProfileProjectionSelector
+{
+    background-color: #D3D3D320;
+    color: white;
+}
+
+#cityProfileConditionSelector
+{
+    background-color: #D3D3D320;
+    color: white;
+}
+
+#cityProfileProjectionSelector:hover
+{
+    background-color: #D3D3D320;
+    color: black;
+}
+#cityProfileConditionSelector:hover
+{
+    background-color: #D3D3D320;
+    color: black;
+}
+
+#distLocSelector
+{
+    background-color: #D3D3D320;
+    color: white;
+}
+
+#distProjSelector
+{
+    background-color: #D3D3D320;
+    color: white;
+}
+
+#distLocSelector:hover
+{
+    background-color: #D3D3D320;
+    color: black;
+}
+#distProjSelector:hover
+{
+    background-color: #D3D3D320;
+    color: black;
+}
+
+#desDCitySelector
+{
+    background-color: #D3D3D320;
+    color: white;
+}
+
+#desDComfortSelector
+{
+    background-color: #D3D3D320;
+    color: white;
+}
+
+#desDCitySelector:hover
+{
+    background-color: #D3D3D320;
+    color: black;
+}
+#desDComfortSelector:hover
+{
+    background-color: #D3D3D320;
+    color: black;
+}
+
+#sankeyCitySelector
+{
+    background-color: #D3D3D320;
+    color: white;
+}
+
+#sankeyProjectionSelector
+{
+    background-color: #D3D3D320;
+    color: white;
+}
+
+#sankeyConditionSelector
+{
+    background-color: #D3D3D320;
+    color: white;
+}
+
+#sankeyCitySelector:hover
+{
+    background-color: #D3D3D320;
+    color: black;
+}
+#sankeyProjectionSelector:hover
+{
+    background-color: #D3D3D320;
+    color: black;
+}
+
+#sankeyConditionSelector:hover
+{
+    background-color: #D3D3D320;
+    color: black;
+}
+
+
+.x-axis axis
+{
+    color: white;
+}
+
+.y-axis axis
+{
+    color: white;
+}
+
+/*Styling for map and sankey*/
+
+.slider-track {
+    background: linear-gradient(to right, #000000, #36509E, #91A8EB, #ABEB26, #EB3E2A, #9E1909)
+}
+
+.slider-tick {
+    background: white
+}
+
+.slider-tick-label {
+    color: white;
+}
+
+.map-guide {
+    color: white;
+    font-size: 24px;
+    font-family: "Calibri Light";
+}
+
+#sankeyTooltip {
+    border: thin solid grey;
+    border-radius: 5px;
+    background: #E8E8E8;
+    padding: 20px;
+}
+
+.link {
+    fill: none;
+    stroke: #000;
+    stroke-opacity: .2;
+}
+.link:hover {
+    stroke-opacity: .5;
+}
+
+
+
+
+
+
+

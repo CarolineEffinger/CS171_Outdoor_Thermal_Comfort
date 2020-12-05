@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel='stylesheet' href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!--	Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Neuton:300,400,400i,700,800" rel="stylesheet">
+
+    <!--rCharts for Coloring Sankey-->
+    <link rel='stylesheet' href="https://timelyportfolio.github.io/rCharts_d3_sankey//css/sankey.css">
+
+    <!-- CSS libraries -->
+    <link rel="stylesheet" href="css/leaflet.css">
+    <link rel="stylesheet" href="css/bootstrap-slider.css">
+
+
+    <!-- Own CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div data-spy="affix" id="dot-nav">
+    <ul>
+        <li class="awesome-tooltip active" title="Home"><a href="#home"></a></li>
+        <li class="awesome-tooltip" title="Warmer"><a href="#getting-warmer"></a></li>
+        <li class="awesome-tooltip" title="Hot"><a href="#too-hot-to-handle"></a></li>
+        <li class="awesome-tooltip" title="Cities"><a href="#cities-are-most-vulnerable"></a></li>
+        <li class="awesome-tooltip" title="Feel"><a href="#how-does-it-feel"></a></li>
+        <li class="awesome-tooltip" title="Comfortable"><a href="#how-hot-is-too-hot"></a></li>
+        <li class="awesome-tooltip" title="When?"><a href="#when-and-where-are-we-comfortable"></a></li>
+        <li class="awesome-tooltip" title="Projection"><a href="#how-hot-is-it-going-to-get"></a></li>
+        <li class="awesome-tooltip" title="Urban"><a href="#the-urban-thermal-experience"></a></li>
+        <li class="awesome-tooltip" title="Mitigation"><a href="#how-can-we-mitigate-for-extreme-conditions"></a></li>
+        <li class="awesome-tooltip" title="Outside"><a href="#too-hot-to-be-outside"></a></li>
+    </ul>
+</div>
+
+<div id="main" class="container-fluid">
+    <section id="home" style="background-image: url('img/D.jpg');">
+        <article>
+            <div class="row justify-content-center" align="center">
+                <div class="col-md-12 text-center center">
+                    <h2 class="main-title">TOO HOT TO BE OUTSIDE?</h2>
+                    <p class="main-text">
+                        A data narrative exploring outdoor thermal comfort in a changing climate...
+                    </p>
+                </div>
+            </div>
+        </article>
+    </section>
+    <section id="getting-warmer">
+        <article>
+            <div class="row">
+                <div class="col-md-12 text-center center">
+                    <h1 class="section-title">It is getting warmer...</h1>
+                    <p class="main-text">
+                        Across the globe, hot days are becoming more frequent and more intense. We are also experiencing
+                        fewer cold days.
+                    </p>
+                    <p class="main-text">
+                        Global mean air temperatures are projected to increase by 0.3 to 4.8oC according to the
+                        Intergovernmental Panel on Climate Change (IPCC) by the end of the 21st century, coupled with
+                        variations in solar radiation and wind speeds.
+                    </p>
+                </div>
+            </div>
+        </article>
+    </section>
+    <section id="too-hot-to-handle" style="background-image: url('img/F.jpg'); background-repeat: no-repeat; background-size: 120% 120%;">
+        <article>
+            <div class="row">
+                <div class="col-md-12 text-center center">
+                    <h1 class="section-title">Too hot to handle...</h1>
+                    <p class="main-text">
+                        According to the World Health Organization (WHO) heat stresses that are linked to climate change
+                        are likely to cause 38,000 additional yearly fatalities worldwide in the coming two decades.
+                    </p>
+                    <p class="main-text">
+                        All humans must maintain a core temperature close to 37.2oC. Thermal stresses occur when the
+                        body is unable to heat/cool itself effectively to maintain this balance. In the presence of high
+                        humidity levels, the human body cannot adapt to a hotter condition through sweating for instance
+                        which can lead to heat strokes.
+                    </p>
+                </div>
+            </div>
+        </article>
+    </section>
+    <section id="cities-are-most-vulnerable">
+        <article>
+            <div class="row">
+                <div class="col-md-12 text-center center">
+                    <h1 class="section-title">Cities are most vulnerable...</h1>
+                    <p class="main-text">
+                        The global trend towards urbanization, with an expectation of 70% of the world's population
+                        living in cities by 2050, places increased strain on cities which face densification and higher
+                        vulnerability to climate change and extreme weather conditions.
+                    </p>
+                    <p class="main-text">
+                        Urban areas experience warmer conditions than surrounding rural areas, a phenomenon named the
+                        urban heat island (UHI) effect. This is primarily caused by the natural land cover replaced by a
+                        concentration of heat-absorbing and retaining surfaces for pavement and buildings as well as
+                        from waste heat generated from buildings, cars, etc...
+                    </p>
+                </div>
+            </div>
+        </article>
+    </section>
+    <section id="how-does-it-feel">
+        <article>
+            <div class="row">
+                <div class="col-md-12 text-center center-top">
+                    <h1 class="section-title">How does it feel outdoors in different cities, regions and climates around
+                        the globe?</h1>
+                    <p class="main-text">
+                        We have chosen to explore eight different cities that represent a range of climates across the globe.
+                    </p>
+                    <p class="map-guide">
+                        Use the slider below to explore eight of the world's cities, from cold to hot, and examine
+                        how climate change has impacted how often residents experience discomfort.
+                    </p>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <!--Filtering for Map Vis-->
+                <div class="col-md-9">
+                    <div style="margin-left: 15vh;">
+                        <input id="mapSlider" style="width: 100%;" type ="text" data-slider-ticks="[1, 2, 3, 4, 5, 6, 7, 8, 9]" data-slider-value = "1" data-slider-ticks-snap-bounds="30" data-slider-ticks-labels='["Entire World View", "Oslo", "Reykjavik", "Berlin", "New York", "San Diego", "Cairo", "Dubai", "Singapore"]'/>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row" style="height: 80vh; padding: 0; margin-left: 20vh; margin-right: 20vh; margin-bottom:10vh;">
+                <div class="col-md-7" , id="map-vis" , style="height: 100%;"></div>
+                <div class="col-md-1"></div>
+                <div class="col-md-4" id="map-stats-box" style="height: 25%; margin-top: 30vh; padding-top: 1vh;  padding-bottom: 0vh;  padding-left: 1vh;  padding-right: 1vh; border: thick solid white">
+                    <p id="map-highlight-stats" style="font-size: xx-large; color: white; text-align:center;"></p>
+                    <p id="map-highlight-stats-cold" style="font-size: large; color: white; text-align:center;"></p>
+                    <p id="map-highlight-stats-hot" style="font-size: large; color: white; text-align:center;"></p>
+                </div>
+            </div>
+        </article>
+    </section>
+    <section id="how-hot-is-too-hot">
+        <article>
+            <div class="row">
+                <div class="col-md-6 text-center center">
+                    <h1 class="section-title">How hot is too hot?</h1>
+                    <p class="main-text">
+                        Among the most comprehensive indices for estimating thermal comfort and stresses in outdoor
+                        environments is the Universal Thermal Climate Index (UTCI). It is a thermal comfort model which
+                        estimates the ‘felt temperature’ (in degrees Celsius) based on a human heat balance model that
+                        combines the air temperature, mean radiant temperature, humidity, and wind speed.
+                    </p>
+                    <p class="main-text">
+                        We use this scale to model the conditions outdoors, where a ‘felt’ temperature of 9 to 26oC is
+                        within a comfortable range.
+                    </p>
+                </div>
+                <div class="col-md-6 text-center center">
+                    <img src="img/H.png" alt="UTCI" width="200" height="400"></div>
+            </div>
+        </article>
+    </section>
+    <section id="when-and-where-are-we-comfortable">
+        <article>
+            <div class="row">
+                <div class="col-md-12 text-center center-top">
+                    <h1 class="section-title">When are we comfortable?</h1>
+                    <p class="main-text">
+                        The visualization maps the outdoor thermal comfort profile of the cities based on minimum and
+                        maximum felt temperatures throughout the year.
+                    </p>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <!--Filtering for City Comfort Vis-->
+                <div class="row" style="padding: 0;">
+                    <div class="col-md-4" style="margin-left: 250px; padding: 0;">
+                        <div class="row justify-content-center" style="height: 100%; padding: 0;">
+                            <select id='cityProfileProjectionSelector' class="custom-select align-self-center"
+                                    style="width: 25%" onchange="cityProfileProjectionChange()">
+                                <option value="C" selected>Current</option>
+                                <option value="STP">Short-Term Projection</option>
+                                <option value="MTP">Medium-Term Projection</option>
+                                <option value="LTP">Long-Term Projection</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4" style="margin-right: 210px; padding: 0;">
+                        <div class="row justify-content-center" style="height: 100%; padding: 0;">
+                            <select id='cityProfileConditionSelector' class="custom-select align-self-center"
+                                    style="width: 25%" onchange="cityProfileConditionChange()">
+                                <option value="SEWE" selected>Sun Exposed and Wind Exposed</option>
+                                <option value="SEWP">Sun Exposed and Wind Protected</option>
+                                <option value="SPWE">Sun Protected and Wind Exposed</option>
+                                <option value="SPWP">Sun Protected and Wind Protected</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <!--City Comfort Vis-->
+                <div class="row justify-content-center" style="padding: 0; margin-right: 350px; margin-left: 350px; height: 300px;">
+                    <div class="col-lg-3" , id="city-comfort-dubai" , style=" width: 25%; height: 400px;"></div>
+                    <div class="col-lg-3" , id="city-comfort-singapore" , style=" width: 25%; height: 400px;"></div>
+                    <div class="col-lg-3" , id="city-comfort-cairo" , style=" width: 25%; height: 400px;"></div>
+                    <div class="col-lg-3" , id="city-comfort-san_diego" , style=" width: 25%; height: 400px;"></div>
+                </div>
+                <div class="row justify-content-center" style="padding: 0; margin-right: 350px; margin-left: 350px; height: 300px;">
+                    <div class="col-lg-3" , id="city-comfort-new_york" , style=" width: 25%; height: 400px;"></div>
+                    <div class="col-lg-3" , id="city-comfort-berlin" , style=" width: 25%; height: 400px;"></div>
+                    <div class="col-lg-3" , id="city-comfort-oslo" , style=" width: 25%; height: 400px;"></div>
+                    <div class="col-lg-3" , id="city-comfort-reykjavik" , style=" width: 25%; height: 400px;"></div>
+                </div>
+            </div>
+        </article>
+    </section>
+    <section id="how-hot-is-it-going-to-get">
+        <article>
+            <div class="row">
+                <div class="col-md-12 text-center center-top">
+                    <h1 class="section-title">How hot is going to get?</h1>
+                    <p class="main-text">
+                        Based on future projections of climate change, the following visualization illustrates how the
+                        distribution of comfortable and thermal stress hours is projected to change in the short,
+                        medium, and long term for different cities around the world.
+                    </p>
+                    <p class="main-text">
+                        The future could even look hotter if no serious collective action is taken towards curbing
+                        emissions to match or be lower than the Paris Agreement pledges.
+                    </p>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <!--Filtering for Dist Vis-->
+                <div class="row">
+                    <div class="col-md-4" style="margin-left: 250px; padding: 0;">
+                        <div class="row justify-content-center" style="height: 100%">
+                            <select id='distLocSelector' class="custom-select align-self-center" style="width: 25%"
+                                    onchange="distLocationChange()">
+                                <option value="Berlin" selected>Berlin</option>
+                                <option value="Cairo">Cairo</option>
+                                <option value="Dubai">Dubai</option>
+                                <option value="New York">New York</option>
+                                <option value="Oslo">Oslo</option>
+                                <option value="Reykjavik">Reykjavik</option>
+                                <option value="San Diego">San Diego</option>
+                                <option value="Singapore">Singapore</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4" style="margin-right: 250px; padding: 0;">
+                        <div class="row justify-content-center" style="height: 100%">
+                            <select id='distProjSelector' class="custom-select align-self-center" style="width: 25%"
+                                    onchange="distProjectionChange()">
+                                <option value="C" selected>Current Projection</option>
+                                <option value="STP">Short-Term Projection</option>
+                                <option value="MTP">Medium-Term Projection</option>
+                                <option value="LTP">Long-Term Projection</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <!--Distribution Vis-->
+            <div class="row" style="margin-right: 210px; height: 100vh; margin-left: 210px; padding: 0;">
+                <div class="col-lg-8" , id="distvis" , style=" width: 100%">
+                </div>
+            </div>
+
+        </article>
+    </section>
+    <section id="the-urban-thermal-experience" style="background-image: url('img/A.png');">
+        <article>
+            <div class="row">
+                <div class="col-md-12 text-center center">
+                    <h1 class="section-title">The urban thermal experience</h1>
+                    <p class="main-text">
+                        Estimated meteorological conditions can give us a sense of the outdoor urban experience, but it
+                        does not capture some of the characteristic complexities of cities. On the same day in the same
+                        city, one area can feel comfortable while another part could feel unbearable.
+                    </p>
+                    <p class="main-text">
+                        Urban microclimates are in fact complex as they experience large variations in wind flow
+                        patterns, solar and sky exposures, surface materials, program and uses - all of which shape the
+                        thermal experience.
+                    </p>
+                </div>
+            </div>
+        </article>
+    </section>
+    <section id="how-can-we-mitigate-for-extreme-conditions">
+        <article>
+            <div class="row">
+                <div class="col-md-12 text-center center-top">
+                    <h1 class="section-title">How can we mitigate for extreme conditions?</h1>
+                    <p class="main-text">
+                        Can we capitalize on those variations through design to mitigate extreme conditions? This
+                        visualization explores the impact of shading and wind flow promotion on the outdoor thermal
+                        comfort conditions and thermal stresses in different cities.
+                    </p>
+                    <p class="main-text">
+                        How different cities will experience thermal stresses is partially dependent on how adapted and
+                        resilient that are designed. But how warm the weather gets remains the largest constraint.
+                    </p>
+                </div>
+            </div>
+            <br>
+            <!--Filtering for Design Decision Vis-->
+            <div class="row">
+                <div class="col-md-4" style="margin-left: 250px; padding: 0;">
+                    <div class="row justify-content-center" style="height: 100%">
+                        <select id='desDCitySelector' class="custom-select align-self-center" style="width: 25%"
+                                onchange="desDCityChange()">
+                            <option value="Berlin">Berlin</option>
+                            <option value="Cairo">Cairo</option>
+                            <option value="Dubai">Dubai</option>
+                            <option value="New York">New York</option>
+                            <option value="Oslo">Oslo</option>
+                            <option value="Reykjavik">Reykjavik</option>
+                            <option value="San Diego">San Diego</option>
+                            <option value="Singapore">Singapore</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4" style="margin-right: 250px; padding: 0;">
+                    <div class="row justify-content-center" style="height: 100%">
+                        <select id='desDComfortSelector' class="custom-select align-self-center" style="width: 25%"
+                                onchange="desDComfortChange()">
+                            <option value="SEWE" selected>Sun Exposed and Wind Exposed</option>
+                            <option value="SEWP">Sun Exposed and Wind Protected</option>
+                            <option value="SPWE">Sun Protected and Wind Exposed</option>
+                            <option value="SPWP">Sun Protected and Wind Protected</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row" style="margin-right: 250px; height: 500px; margin-left: 250px; padding: 0;">
+                <div class="col-lg-8" id="design-vis" style="width: 100%">
+                </div>
+            </div>
+
+        </article>
+    </section>
+    <section id="too-hot-to-be-outside">
+        <article>
+            <div class="row">
+                <div class="col-md-12 text-center center-top">
+                    <h1 class="section-title">Too hot to be outside?</h1>
+                    <p class="main-text">
+                        Climate change is a global issue which will affect everyone everywhere. Its impact will be felt
+                        disproportionately across the world.
+                    </p>
+                    <p class="main-text">
+                        Our cities in the coming years will no longer be experienced the same way: we might feel
+                        discomfort more extensively, be exposed to heat stress, skip seasons.. and we might no longer be
+                        able to use outdoor spaces the same way.
+                    </p>
+                </div>
+            </div>
+            <br>
+            <!--Filtering for Sankey Vis-->
+            <div class="row" style="height: 10vh; margin-left: 40vh; padding: 0;">
+                <div class="col-md-4">
+                    <div class="row justify-content-center" style="height: 100%">
+                        <select id='sankeyProjectionSelector' class="custom-select align-self-center" style="width: 75%" onchange="sankeyProjectionChange()">
+                            <option value="current" selected>Current Projection</option>
+                            <option value="short">Short-Term Projection</option>
+                            <option value="medium">Medium-Term Projection</option>
+                            <option value="long">Long-Term Projection</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="row justify-content-center" style="height: 100%">
+                        <select id='sankeyConditionSelector' class="custom-select align-self-center" style="width: 75%" onchange="sankeyConditionChange()">
+                            <option value="CC_SEWE" selected>Sun and Wind</option>
+                            <option value="CC_SEWP">Sun and No Wind</option>
+                            <option value="CC_SPWE">No Sun and Wind</option>
+                            <option value="CC_SPWP">No Sun and No Wind</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <!--Sankey Vis with Stats-->
+            <div class="row" style="height: 80vh; padding: 0; margin-left: 20vh; margin-right: 20vh; margin-bottom:10vh;">
+                <div class="col-md-7", id="sankey-vis", class = 'rChart rCharts_d3_sankey', style="height: 100%">
+                </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-4" id="sankey-vis-stats", style="height: 25%; margin-top: 30vh; padding-top: 2vh;  padding-bottom: 1vh;  padding-left: 1vh;  padding-right: 1vh; border: thick solid white">
+<!--                    <p id="sankey-stat-projection" style="font-size: large; color: white; text-align:center;">Projection: Current</p>-->
+<!--                    <p id="sankey-stat-condition" style="font-size: large; color: white; text-align:center;">Conditions: Sun Exposed and Wind Exposed</p>-->
+                    <p id="sankey-stat-hot" style="font-size: large; color: white; text-align:center;">Percentage of Hours in Strong Heat Stress: <span id='hotVal' style="font-size: xx-large; font-weight: bolder"></span></p>
+                    <p id="sankey-stat-cold" style="font-size: large; color: white; text-align:center;">Percentage of Hours in Strong Cold Stress: <span id='coldVal' style="font-size: xx-large; font-weight: bolder"></span></p>
+                </div>
+            </div>
+        </article>
+    </section>
+</div>
+
+<!-- Load JS libraries - Main -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+
+<!-- Load JS libraries - VerticalDots-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="js/nav.js"></script>
+
+<!--bootstrap-slider-->
+<script src="js/bootstrap-slider.js"></script>
+
+<!--rCharts-->
+<script src="https://timelyportfolio.github.io/rCharts_d3_sankey//js/d3.v3.js" type='text/javascript'></script>
+<script src="https://timelyportfolio.github.io/rCharts_d3_sankey//js/sankey.js" type='text/javascript'></script>
+
+<!-- d3 -->
+<script src="https://d3js.org/d3.v6.min.js"></script>
+<script src="https://d3js.org/d3-collection.v1.min.js"></script>
+
+<!--	d3-sankey script-->
+<script src="js/sankey.js"></script>
+
+<!-- leaflet-->
+<script src="js/leaflet.js"></script>
+
+<!-- Visualization objects -->
+<script src="js/cityComfortProfile.js"></script>
+<script src="js/sankeyVis.js"></script>
+<script src="js/distvis.js"></script>
+<script src="js/mapVis.js"></script>
+<script src="js/comfortMatrix.js"></script>
+
+<!-- Load data, create visualizations -->
+<script src="js/main.js"></script>
+
+</body>
+</html>
