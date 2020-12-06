@@ -317,7 +317,7 @@ function createLegend(){
 	// legend and value tooltip
 	let valuetool = legendcontainer.append("g")
 		.attr('class', 'valuetool')
-		.attr("transform", "translate(" + width/3 + "," + 2*margin.top + ")")
+		.attr("transform", "translate(" + 0 + "," + 2*margin.top + ")")
 		.attr("font-family", 'gravityregular');
 
 	valuetool.selectAll("rect")

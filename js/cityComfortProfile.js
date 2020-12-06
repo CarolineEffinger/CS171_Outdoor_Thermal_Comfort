@@ -69,7 +69,7 @@ class CityComfortProfile {
 
         vis.circles.enter().append("circle")
             .attr("class", "circle-legend")
-            .attr("cy", vis.height/1.9)
+            .attr("cy", vis.height/2)
             .attr("cx", vis.width/2)
             .attr("r", d => vis.y(d))
             .attr("stroke", "lightgrey")

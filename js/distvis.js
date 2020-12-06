@@ -128,7 +128,7 @@ class DistVis {
             .attr("y", -20)
             .attr("fill", "white")
             .attr("font-family", 'gravityultralight')
-            .text("Stress:")
+            .text("Stress")
 
         // (Filter, aggregate, modify data)
         vis.wrangleData();

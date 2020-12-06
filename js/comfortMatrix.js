@@ -154,8 +154,6 @@ class ComfortMatrix {
                 .attr("stroke", "black")
                 .attr("stroke-width", 0.5)
                 .attr("y", d => vis.y(hourFormat(d.value[0].time)))
-                // .transition.duration(5000)
-
 
             rect.exit().remove();
 
