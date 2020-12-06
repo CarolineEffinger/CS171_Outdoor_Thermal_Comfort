@@ -51,7 +51,9 @@
 
 
 			
-#### index.html			
+#### index.html	
+
+#### Additional Project Resources:
 
 The project is hosted on this link: https://carolineeffinger.github.io/CS171_Outdoor_Thermal_Comfort/
 
