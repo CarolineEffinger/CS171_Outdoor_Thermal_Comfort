@@ -9,11 +9,11 @@
 	bootstrap-slider.css
 	leaflet.css
 	
-        [custom file]
+    [custom file]
 	style.css                             all custom files for the project
 
-        [font files .woff/.woff2]
-        [image folder for map icons]	
+    [font files .woff/.woff2]
+    [image folder for map icons]	
 
 			
 #### data		
@@ -21,7 +21,7 @@
 	CombinedData.csv                      main data file including UTCI values for all cities and projections
 	CombinedData.xlsx
 
-        [geospacital data]
+    [geospacital data]
 	cities.json                           geospatial data for cities
 
 
@@ -39,7 +39,7 @@
 	leaflet.js
 	sankey.js
 
-        [custom]
+    [custom]
 	main.js                             main file, with all structure calling visualization classes
 	mapVis.js                           cities map visualization class
 	distvis.js                          comfort distribution visualization class
