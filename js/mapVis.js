@@ -328,7 +328,7 @@ class mapVis {
         ;
 
         // Dubai
-        if (sliderVal === 8) {
+        if (sliderVal === 9) {
             // Remove all other map city outlines and hide city circles
             d3.selectAll('.mapCity').remove();
             d3.selectAll('.mapCircle')
@@ -403,7 +403,7 @@ class mapVis {
             });
 
             // Zoom in
-            vis.map.flyTo([40.8, -73.8], 10, {
+            vis.map.flyTo([40.8, -73.8], 9.8, {
                 animate: true,
                 duration: 5
             });
@@ -450,7 +450,7 @@ class mapVis {
         ;
 
         // Oslo
-        if (sliderVal === 2) {
+        if (sliderVal === 3) {
             // Remove all other map city outlines and hide city circles
             d3.selectAll('.mapCity').remove();
             d3.selectAll('.mapCircle')
@@ -463,7 +463,7 @@ class mapVis {
             });
 
             // Zoom in
-            vis.map.flyTo([59.913868, 10.752245], 10, {
+            vis.map.flyTo([59.913868, 10.752245], 9.9, {
                 animate: true,
                 duration: 5
             });
@@ -536,7 +536,7 @@ class mapVis {
         ;
 
         // Reykjavik
-        if (sliderVal === 3) {
+        if (sliderVal === 2) {
             // Remove all other map city outlines and hide city circles
             d3.selectAll('.mapCity').remove();
             d3.selectAll('.mapCircle')
@@ -683,7 +683,7 @@ class mapVis {
         ;
 
         // Singapore
-        if (sliderVal === 9) {
+        if (sliderVal === 8) {
             // Remove all other map city outlines and hide city circles
             d3.selectAll('.mapCity').remove();
             d3.selectAll('.mapCircle')

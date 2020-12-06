@@ -1,3 +1,115 @@
+@font-face {
+    font-family: 'gravitybold';
+    src: url('gravity-bold-webfont.woff2') format('woff2'),
+    url('gravity-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'gravitybold_italic';
+    src: url('gravity-bolditalic-webfont.woff2') format('woff2'),
+    url('gravity-bolditalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'gravitybook';
+    src: url('gravity-book-webfont.woff2') format('woff2'),
+    url('gravity-book-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'gravitybook_italic';
+    src: url('gravity-bookitalic-webfont.woff2') format('woff2'),
+    url('gravity-bookitalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'gravityitalic';
+    src: url('gravity-italic-webfont.woff2') format('woff2'),
+    url('gravity-italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'gravitylight';
+    src: url('gravity-light-webfont.woff2') format('woff2'),
+    url('gravity-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'gravitylight_italic';
+    src: url('gravity-lightitalic-webfont.woff2') format('woff2'),
+    url('gravity-lightitalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'gravityregular';
+    src: url('gravity-regular-webfont.woff2') format('woff2'),
+    url('gravity-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'gravityultralight';
+    src: url('gravity-ultralight-webfont.woff2') format('woff2'),
+    url('gravity-ultralight-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'gravityultralight_italic';
+    src: url('gravity-ultralightitalic-webfont.woff2') format('woff2'),
+    url('gravity-ultralightitalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'gravitybold';
+    src: url('gravity-bold-webfont.woff2') format('woff2'),
+    url('gravity-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'gravitybold_italic';
+    src: url('gravity-bolditalic-webfont.woff2') format('woff2'),
+    url('gravity-bolditalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'genericabold';
+    src: url('generica_bold-webfont.woff2') format('woff2'),
+    url('generica_bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'genericaregular';
+    src: url('generica-webfont.woff2') format('woff2'),
+    url('generica-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
     background: #393e46;
 }
@@ -16,40 +128,52 @@ body, html {
 {
     color: white;
     font-size: 42px;
-    font-family: "Calibri Black";
+    font-family: 'gravityregular';
 }
 
 .main-title
 {
     color: white;
     font-size:65px;
-    font-family: "Calibri Black";
+    font-family: 'genericaregular';
 }
 
 .main-text{
     color: white;
-    font-size: 24px;
-    font-family: "Calibri Light";
+    font-size: 22px;
+    font-family: 'gravityultralight';
 }
 
 .center {
-    margin-top: 450px;
-    margin-left: 200px;
     text-align: left;
-    width: 800px;
+    width: 60vw;
+    margin-top: 30vh;
+    margin-right: 80vw;
+}
+
+.center-upt {
+    text-align: left;
+    width: 60vw;
+    margin-top: 30vh;
+
 }
 
 .center-top {
-    margin-top: 70px;
-    margin-left: 200px;
     text-align: left;
-    width: 800px;
+    margin-top: 0vh;
+    margin-right: 30vw;
+    width: 90vw;
+}
+
+
+article {
+    margin-left: 10vw;
+    margin-right: 10vw;
+    width: 100vw;
+    height: 100vh;
 }
 
 section {
-    height: 100%;
-    padding: 0px;
-    width: 100%;
 }
 
 #dot-nav {
@@ -75,10 +199,14 @@ section {
     margin: 10px 10px 0px 0px;
     width: 15px;
     vertical-align: bottom;
+    font-size: 12px;
+    font-family: 'gravityregular';
 }
 
 #dot-nav li.active, #dot-nav li:hover {
     background-color: #393e46;
+    font-size: 12px;
+    font-family: 'gravityregular';
 }
 
 #dot-nav a {
@@ -87,6 +215,8 @@ section {
     margin: 0px 0px 0px 25px;
     position: relative;
     top: -5px;
+    font-size: 12px;
+    font-family: 'gravityregular';
 }
 
 .awesome-tooltip + .tooltip > .tooltip-inner {
@@ -94,8 +224,11 @@ section {
     /*color: #f5f5f5;*/
     /*border: 3px solid #393e46;*/
     font-size: 24px;
-    font-family: "Calibri Light";
+    width:500px;
     background-color: transparent;
+    font-size: 18px;
+    font-family: 'gravityregular';
+    text-align: right;
 }
 
 .awesome-tooltip + .tooltip.left > .tooltip-arrow {
@@ -119,7 +252,10 @@ body {
 h1 {
     font-size: 36px;
     color: #825a5a;
-    margin-top: 40px;
+    margin-top: 8vh;
+    margin-bottom: 4vh;
+    margin-right: 10vw;
+    font-family: 'gravitybold';
 }
 
 .text-labels {
@@ -132,156 +268,316 @@ h1 {
 h2 {
     color: #94a97a;
     font-size: 24px;
-    margin-top: 10px;
-    margin-bottom: 30px;
+    margin-top: 40vh;
+    margin-bottom: 4vh;
+    font-family: 'gravitybold';
+}
+
+p{
+    margin-right: 10vw;
 }
 
 
 .city-legend {
-    font-family: "Calibri Light";
     font-size: 14px;
     color: white;
     background-color: #D3D3D320;
 }
 
 .text-lab {
-    font-family: "Calibri Light";
-    font-size: 14px;
+    font-size: 8px;
     color: white;
 }
+
+#hourSelector
+{
+    background-color: #D3D3D320;
+    color: white;
+    font-family: 'gravityregular';
+    font-size: 12px;
+}
+
+#hourSelector:hover
+{
+    background-color: #D3D3D320;
+    color: black;
+    font-family: 'gravityregular';
+    font-size: 12px;
+}
+
+
 #cityProfileProjectionSelector
 {
     background-color: #D3D3D320;
     color: white;
+    font-family: 'gravityregular';
+    font-size: 12px;
 }
 
 #cityProfileConditionSelector
 {
     background-color: #D3D3D320;
     color: white;
+    font-family: 'gravityregular';
+    font-size: 12px;
 }
 
 #cityProfileProjectionSelector:hover
 {
     background-color: #D3D3D320;
     color: black;
+    font-family: 'gravityregular';
+    font-size: 12px;
 }
 #cityProfileConditionSelector:hover
 {
     background-color: #D3D3D320;
     color: black;
+    font-family: 'gravityregular';
+    font-size: 12px;
 }
 
 #distLocSelector
 {
     background-color: #D3D3D320;
     color: white;
+    font-family: 'gravityregular';
+    font-size: 12px;
 }
 
 #distProjSelector
 {
     background-color: #D3D3D320;
     color: white;
+    font-family: 'gravityregular';
+    font-size: 12px;
 }
 
 #distLocSelector:hover
 {
     background-color: #D3D3D320;
     color: black;
+    font-family: 'gravityregular';
+    font-size: 12px;
 }
 #distProjSelector:hover
 {
     background-color: #D3D3D320;
     color: black;
+    font-family: 'gravityregular';
+    font-size: 12px;
 }
 
 #desDCitySelector
 {
     background-color: #D3D3D320;
     color: white;
+    font-family: 'gravityregular';
+    font-size: 12px;
 }
 
-#desDComfortSelector
+#viewSelector
 {
     background-color: #D3D3D320;
     color: white;
+    font-family: 'gravityregular';
+    font-size: 12px;
 }
 
 #desDCitySelector:hover
 {
     background-color: #D3D3D320;
     color: black;
+    font-family: 'gravityregular';
+    font-size: 12px;
 }
-#desDComfortSelector:hover
+#viewSelector:hover
 {
     background-color: #D3D3D320;
     color: black;
+    font-family: 'gravityregular';
+    font-size: 12px;
 }
 
 #sankeyCitySelector
 {
     background-color: #D3D3D320;
     color: white;
+    font-family: 'gravityregular';
+    font-size: 12px;
 }
 
 #sankeyProjectionSelector
 {
     background-color: #D3D3D320;
     color: white;
+    font-family: 'gravityregular';
+    font-size: 12px;
 }
 
 #sankeyConditionSelector
 {
     background-color: #D3D3D320;
     color: white;
+    font-family: 'gravityregular';
+    font-size: 12px;
 }
 
 #sankeyCitySelector:hover
 {
     background-color: #D3D3D320;
     color: black;
+    font-family: 'gravityregular';
+    font-size: 12px;
 }
 #sankeyProjectionSelector:hover
 {
     background-color: #D3D3D320;
     color: black;
+    font-family: 'gravityregular';
+    font-size: 12px;
 }
 
 #sankeyConditionSelector:hover
 {
     background-color: #D3D3D320;
     color: black;
-}
-
-
-.x-axis axis
-{
-    color: white;
-}
-
-.y-axis axis
-{
-    color: white;
+    font-family: 'gravityregular';
+    font-size: 12px;
 }
 
 /*Styling for map and sankey*/
 
-.slider-track {
-    background: linear-gradient(to right, #000000, #36509E, #91A8EB, #ABEB26, #EB3E2A, #9E1909)
+
+.iconClass-Berlin {
+    font-size: 14px;
+    padding: 5px;
+    background-color: white;
+    border: 5px solid #0c2c84;
 }
 
-.slider-tick {
-    background: white
+.iconClass-Cairo {
+    font-size: 14px;
+    padding: 5px;
+    background-color: white;
+    border: 5px solid #225ea8;
 }
 
-.slider-tick-label {
+.iconClass-Dubai {
+    font-size: 14px;
+    padding: 5px;
+    background-color: white;
+    border: 5px solid #1d91c0;
+}
+
+.iconClass-NY {
+    font-size: 14px;
+    padding: 5px;
+    background-color: white;
+    border: 5px solid #41b6c4;
+}
+
+.iconClass-Oslo {
+    font-size: 14px;
+    padding: 5px;
+    background-color: white;
+    border: 5px solid #7fcdbb;
+}
+
+.iconClass-Rey {
+    font-size: 14px;
+    padding: 5px;
+    background-color: white;
+    border: 5px solid #c7e9b4;
+}
+
+.iconClass-SD {
+    font-size: 14px;
+    padding: 5px;
+    background-color: white;
+    border: 5px solid #edf8b1;
+}
+
+.iconClass-Singapore {
+    font-size: 14px;
+    padding: 5px;
+    background-color: white;
+    border: 5px solid #ffffd9;
+}
+
+#btn-all {
+    font-weight: bold;
+    font-size: larger;
     color: white;
+    background-color: #D3D3D320;
 }
 
-.map-guide {
-    color: white;
-    font-size: 24px;
-    font-family: "Calibri Light";
+#btn-berlin {
+    color: #0c2c84;
+    font-weight: bold;
+    font-size: larger;
+    background-color: #D3D3D320;
+}
+
+#btn-cairo {
+    color: #225ea8;
+    font-weight: bold;
+    font-size: larger;
+    background-color: #D3D3D320;
+}
+
+#btn-dubai {
+    color: #1d91c0;
+    font-weight: bold;
+    font-size: larger;
+    background-color: #D3D3D320;
+}
+
+#btn-ny {
+    color: #41b6c4;
+    font-weight: bold;
+    font-size: larger;
+    background-color: #D3D3D320;
+}
+
+#btn-oslo {
+    color: #7fcdbb;
+    font-weight: bold;
+    font-size: larger;
+    background-color: #D3D3D320;
+}
+
+#btn-rey {
+    color: #c7e9b4;
+    font-weight: bold;
+    font-size: larger;
+    background-color: #D3D3D320;
+}
+
+#btn-sd {
+    color: #edf8b1;
+    font-weight: bold;
+    font-size: larger;
+    background-color: #D3D3D320;
+}
+
+#btn-singapore {
+    color: #ffffd9;
+    font-weight: bold;
+    font-size: larger;
+    background-color: #D3D3D320;
+}
+
+#btn-all:hover,
+#btn-berlin:hover,
+#btn-cairo:hover,
+#btn-dubai:hover,
+#btn-ny:hover,
+#btn-oslo:hover,
+#btn-rey:hover,
+#btn-sd:hover,
+#btn-singapore:hover {
+    background-color: lightblue;
 }
 
 #sankeyTooltip {
@@ -300,9 +596,57 @@ h2 {
     stroke-opacity: .5;
 }
 
+.x-axis axis
+{
+    color: white;
+    font-family: 'gravityultralight';
+}
+
+.y-axis axis
+{
+    color: white;
+    font-family: 'gravityultralight';
+}
 
 
+/*Styling for map and sankey*/
 
+.slider-track {
+    background: linear-gradient(to right, #000000, #36509E, #91A8EB, #ABEB26, #EB3E2A, #9E1909)
+}
 
+.slider-tick {
+    background: white
+}
 
+.slider-tick-label {
+    color: white;
+    font-family: 'gravitylight';
+}
+
+.map-guide {
+    color: white;
+    font-size: 24px;
+    font-family: 'gravitylight';
+}
+
+#sankeyTooltip {
+    border: thin solid grey;
+    border-radius: 5px;
+    background: #E8E8E8;
+    padding: 20px;
+}
+
+.link {
+    fill: none;
+    stroke: #000;
+    stroke-opacity: .2;
+}
+.link:hover {
+    stroke-opacity: .5;
+}
+
+li{
+    color: white
+}
 

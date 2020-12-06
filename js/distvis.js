@@ -27,7 +27,7 @@ class DistVis {
     initVis(){
         let vis = this;
 
-        vis.margin = { top: 20, right: 0, bottom: 75, left: 140 };
+        vis.margin = { top: 20, right: 100, bottom: 75, left: 180 };
 
         vis.width = $("#" + vis.parentElement).width() - vis.margin.left - vis.margin.right,
             vis.height = 500 - vis.margin.top - vis.margin.bottom;
@@ -59,70 +59,76 @@ class DistVis {
 
         vis.svg.append("g")
             .attr("class", "x-axis axis")
-            .attr("stroke", "white")
-            .attr("stroke-width", 1)
             .attr("color", "white")
             .attr("transform", "translate(0," + vis.height + ")")
-            .attr("font-family", "Calibri Light");;
+            .attr("font-family", 'gravityultralight')
 
         vis.svg.append("g")
             .attr("class", "y-axis axis")
-            .attr("stroke", "white")
-            .attr("stroke-width", 1)
             .attr("color", "white")
-            .attr("font-family", "Calibri Light");;
+            .attr("font-family", 'gravityultralight')
 
         // Axis title
         vis.svg.append("text")
-            .attr("x", -50)
-            .attr("y", -8)
+            .attr("x", vis.width-15)
+            .attr("y", vis.height+15)
+            .attr("fill", "white")
+            .attr("font-family", 'gravityultralight')
+            .text("Degrees (°C)")
+
+        vis.svg.append("text")
+            .attr("x", -25)
+            .attr("y", -12)
+            .attr("fill", "white")
+            .attr("font-family", 'gravityultralight')
             .text("Hours")
-            .attr("stroke", "white")
-            .attr("stroke-width", 1)
-            .attr("font-family", "Calibri Light");
 
-        // legend
-        // append legend
-        vis.legend = vis.svg.append("g")
-            .attr('class', 'legend')
-            .attr('transform', `translate(${vis.width / 2.8}, ${vis.height +60})`)
-            .attr("stroke", "white")
-            .attr("stroke-width", 1)
-            .attr("font-family", "Calibri Light");;
+        // legend and value tooltip
+        vis.valuetool = vis.svg.append("g")
+            .attr('class', 'valuetool')
+            .attr('transform', `translate(${vis.width-60}, ${vis.margin.top})`)
+            .attr("color", "white")
+            .attr("font-family", 'gravityultralight');
 
-        //Append a defs (for definition) element to your SVG
-        vis.defs = vis.legend.append("defs");
-
-        //Append a linearGradient element to the defs and give it a unique id
-        vis.linearGradient = vis.defs.append("linearGradient")
-            .attr("id", "linear-gradient");
-
-        //Append multiple color stops by using D3's data/enter step
-        vis.linearGradient.selectAll("stop")
-            .data(vis.colorScale.range())
-            .enter().append("stop")
-            .attr("offset", function(d,i) { return i/(vis.colorScale.range().length-1); })
-            .attr("stop-color", function(d) { return d; });
-
-        //Draw the rectangle and fill with gradient
-        vis.legend.append("rect")
-            .attr("width", 200)
+        vis.valuetool.selectAll("rect")
+            .data(vis.colors)
+            .enter()
+            .append("rect")
+            .attr("width", 110)
             .attr("height", 20)
-            .style("fill", "url(#linear-gradient)");
+            .attr("y", (d,i)=> (i*50)+10)
+            .style("fill", function(d){return d});
 
-        // legend label lower
-        vis.legend.append("text")
-            .attr("class", "lower")
-            .text("High Cold Stress")
-            .attr("y", -5)
-            .attr("x", -30);
+        let categories = ['Strong Cold Stress', 'Mild Cold Stress', 'Comfort', 'Mild Heat Stress', 'Strong Heat Stress'];
 
-        // legend label upper
-        vis.legend.append("text")
-            .attr("class", "upper")
-            .text("High Heat stress")
-            .attr("x", 170)
-            .attr("y", -5);
+        vis.valuetool.selectAll(".categories")
+            .data(categories)
+            .enter()
+            .append("text")
+            .attr("class", "categories")
+            .attr("y", (d,i)=> (i*50)+5)
+            .attr("font-size", 12)
+            .attr("fill", "white")
+            .attr("font-family", 'gravityregular')
+
+            .text(function (d){return d});
+
+        vis.valuetool.append("text")
+            .attr("id", "value_title")
+            .attr("font-size", 16)
+            .attr("y", -20)
+            .attr("x", 117)
+            .attr("fill", "white")
+            .attr("font-family", 'gravityultralight')
+            .text("Days")
+
+        vis.valuetool.append("text")
+            .attr("id", "value-title")
+            .attr("font-size", 16)
+            .attr("y", -20)
+            .attr("fill", "white")
+            .attr("font-family", 'gravityultralight')
+            .text("Stress:")
 
         // (Filter, aggregate, modify data)
         vis.wrangleData();
@@ -252,9 +258,59 @@ class DistVis {
 
             });
 
+        vis.tempperCategory = []
+        vis.tempperCategory[0] = vis.binData.filter(function(d){
+            return (d.x0 < -13)
+        });
+        vis.tempperCategory[1] = vis.binData.filter(function(d){
+            return (d.x0 < 9 && d.x0 > -13)
+        });
+        vis.tempperCategory[2] = vis.binData.filter(function(d){
+            return (d.x0 < 26 && d.x0 > 9)
+        });
+        vis.tempperCategory[3] = vis.binData.filter(function(d){
+            return (d.x0 < 32 && d.x0 > 26)
+        });
+        vis.tempperCategory[4] = vis.binData.filter(function(d){
+            return (d.x0 > 32)
+        });
 
+        vis.sum = []
+        vis.tempperCategory.forEach(function(d,i) {
+            let count = 0
+            d.forEach(function (dat) {
+                count += (dat.length)
+            })
+            if (count < 24){
+                vis.sum[i]=count+"h"
+            }
+            else {
+                vis.sum[i]=(count/24).toFixed(1)+"d"
+            }
+            //vis.sum[i]=count
+        })
+        console.log(vis.sum)
 
+        //vis.svg.selectAll(".values").remove();
 
+        vis.values = vis.valuetool.selectAll(".values")
+            .data(vis.sum)
+            .attr("class", "values");
+
+        vis.values.enter()
+            .append("text")
+            .attr("class", "values")
+            .merge(vis.values)
+            .transition()
+            .duration(800)
+            .attr("y", (d,i)=> (i*50)+23)
+            .attr("x", 118)
+            .attr("font-size", 13)
+            .attr("fill", "white")
+            .attr("font-family", 'gravitylight')
+            .text(function (d){return d});
+
+        vis.values.exit().remove();
 
         // Call axis function with the new domain
         vis.svg.select(".y-axis").call(vis.yAxis);
@@ -267,7 +323,7 @@ class DistVis {
     }
 
 
-    // mean caluclation (for distribution) unused as we use binning
+    // mean calculation (for distribution) unused as we use binning
     getMean(data) {
         let meanval = 0
         data.forEach(function (d){

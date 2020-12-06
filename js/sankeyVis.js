@@ -66,7 +66,7 @@ class sankeyVis {
 
         // Color scheme for nodes
         vis.colors = ["beige","beige", "beige", "beige", "beige", "beige", "beige", "beige",
-                "#9E1909", "#EB3E2A", "#ABEB26", "#91A8EB", "#36509E"];
+            "#9E1909", "#EB3E2A", "#ABEB26", "#91A8EB", "#36509E"];
 
 
         // Filter data based on projection and combine extreme comfort categories
@@ -160,7 +160,7 @@ class sankeyVis {
                 name : node,
             }
             nodes.push(nodeInfo);
-            };
+        };
 
         // Links for each city and comfort level
         let links = [];
@@ -270,14 +270,15 @@ class sankeyVis {
             .attr("y", function(d) { return d.dy / 2; })
             .attr("dy", ".35em")
             .attr("text-anchor", "end")
-            .attr('font-size', '18px')
+            .attr('font-size', '16px')
             .attr('fill', 'white')
+            .attr("font-family", 'gravitylight')
             .attr("transform", null)
             .text(function(d) { return d.name; })
             .filter(function(d) { return d.x < vis.width / 2; })
             .attr("x", 6 + vis.sankey.nodeWidth())
             .attr("text-anchor", "start");
-            //.attr('font-size', '20px');
+        //.attr('font-size', '20px');
 
         // Update colors of links
         d3.selectAll('#sankey-vis svg path.link')
@@ -302,9 +303,8 @@ function highlightStats(d, i) {
             $("#coldVal").text(coldVal);
         }
     }
-
-
 }
+
 //
 // let baseline = [
 //     {

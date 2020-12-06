@@ -5,11 +5,18 @@ let dateParser = d3.timeParse("%Y-%m-%d");
 let dayFormat = d3.timeFormat("%d");
 let monthFormat = d3.timeFormat("%m");
 let hourFormat = d3.timeFormat("%H");
-
+let selectedMonth = "1";
+let boolZm = false;
 
 let cityProfDubai, cityProfSingapore, cityProfCairo, cityProfSanDiego, cityProfNewYork, cityProfBerlin, cityProfOslo, cityProfReykjavik;
 let mydistVis;
 let myComfortMtx;
+
+// Included for Map and Sankey visualizations
+let myMapVis, mysankeyVis;
+
+// GeoData
+let geoDataFile = 'data/cities.json';
 
 let selectorType = "C";
 let selectorUTCI = "UTCI_SEWE";
@@ -80,8 +87,71 @@ function createVis(data){
 
 	myComfortMtx = new ComfortMatrix("design-vis", comfortInfo);
 
-	//console.log(cityProfileSelectedUTCI)
+
 }
+
+/*// Different hour selector for city profile vis
+let selectedMonth = $('#monthChange').val();
+
+function monthChange() {
+	selectedMonth = $('#monthChange').val();
+	cityProfDubai.wrangleData();
+	cityProfSingapore.wrangleData();
+	cityProfCairo.wrangleData();
+	cityProfSanDiego.wrangleData();
+	cityProfNewYork.wrangleData();
+	cityProfBerlin.wrangleData();
+	cityProfOslo.wrangleData();
+	cityProfReykjavik.wrangleData();
+};*/
+
+let obj = {
+	value: '',
+	letMeKnow() {
+		console.log(`The variable has changed to ${this.selMonth}`);
+		cityProfDubai.updateVis();
+		cityProfSingapore.updateVis();
+		cityProfCairo.updateVis();
+		cityProfSanDiego.updateVis();
+		cityProfNewYork.updateVis();
+		cityProfBerlin.updateVis();
+		cityProfOslo.updateVis();
+		cityProfReykjavik.updateVis();
+	},
+	get selMonth() {
+		return this.value;
+	},
+	set selMonth(value) {
+		this.value = value;
+		this.letMeKnow();
+	}
+}
+
+console.log(obj.selMonth)
+
+//obj.selMonth = 5;
+console.log(obj.selMonth)
+
+//obj.selMonth = 15;
+console.log(obj.selMonth)
+
+
+
+
+// Different hour selector for city profile vis
+let hourSelector = $('#hourSelector').val();
+
+function hourSelectorChange() {
+	hourSelector = $('#hourSelector').val();
+	cityProfDubai.wrangleData();
+	cityProfSingapore.wrangleData();
+	cityProfCairo.wrangleData();
+	cityProfSanDiego.wrangleData();
+	cityProfNewYork.wrangleData();
+	cityProfBerlin.wrangleData();
+	cityProfOslo.wrangleData();
+	cityProfReykjavik.wrangleData();
+};
 
 
 // Different projections for city profile vis
@@ -125,10 +195,10 @@ function desDCityChange() {
 };
 
 // Different UTCIs for design comfort vis
-let desDComfortSelector = "UTCI_" + $('#desDComfortSelector').val();
+let viewSelector = $('#viewSelector').val();
 
-function desDComfortChange() {
-	desDComfortSelector = "UTCI_" + $('#desDComfortSelector').val();
+function viewChange() {
+	viewSelector = $('#viewSelector').val();
 	myComfortMtx.wrangleData();
 };
 
@@ -152,13 +222,7 @@ function distProjectionChange() {
 	mydistVis.wrangleData();
 };
 
-
-
 // Included for Map and Sankey visualizations
-let myMapVis, mysankeyVis;
-
-// GeoData
-let geoDataFile = 'data/cities.json';
 
 // Update map based on slider
 
@@ -207,9 +271,7 @@ function sankeyConditionChange() {
 	let text = conditionTxt + condition
 	$("#sankey-stat-condition").text(text);
 	mysankeyVis.wrangleData();
-};
-
-
+}
 // Helper functions
 
 // Rename keys
@@ -232,3 +294,76 @@ let renameKey = (object, key, newKey) => {
 let clone = (obj) => Object.assign({}, obj);
 
 
+// add below here (code for legend)
+// create static legend for "how hot is too hot" section
+createLegend();
+
+// define legend
+function createLegend(){
+	let margin = { top: 25, right: 25, bottom: 25, left: 25 };
+
+	let width = $("#legendID").width() - margin.left - margin.right
+	let height = $("#legendID").height() - margin.top - margin.bottom;
+
+	// SVG drawing area
+	let legendcontainer = d3.select("#legendID").append("svg")
+		.attr("width", width + margin.left + margin.right)
+		.attr("height", height + margin.top + margin.bottom);
+
+	let colors = ["#36509E","#91A8EB", "#ABEB26", "#EB3E2A", "#9E1909"];
+	let cat = ['Strong Cold Stress', 'Mild Cold Stress', 'Comfort', 'Mild Heat Stress', 'Strong Heat Stress'];
+	let ranges = ["<-13", "-13 to 9", "9 to 26", "26 to 32", ">32"];
+
+	// legend and value tooltip
+	let valuetool = legendcontainer.append("g")
+		.attr('class', 'valuetool')
+		.attr("transform", "translate(" + width/3 + "," + 2*margin.top + ")")
+		.attr("font-family", 'gravityregular');
+
+	valuetool.selectAll("rect")
+		.data(colors)
+		.enter()
+		.append("rect")
+		.attr("width", 110)
+		.attr("height", 20)
+		.attr("y", (d,i)=> (i*50)+10)
+		.style("fill", function(d){return d});
+
+	valuetool.selectAll(".categories")
+		.data(cat)
+		.enter()
+		.append("text")
+		.attr("class", "categories")
+		.attr("y", (d,i)=> (i*50)+5)
+		.attr("font-size", 12)
+		.attr("fill", "white")
+		.attr("font-family", 'gravityregular')
+		.text(function (d){return d});
+
+	valuetool.append("text")
+		.attr("fill", "white")
+		.attr("font-size", 16)
+		.attr("font-family", 'gravityultralight')
+		.attr("y", -20)
+		.attr("x", 115)
+		.text("Degrees (°C):")
+
+	valuetool.append("text")
+		.attr("fill", "white")
+		.attr("font-size", 16)
+		.attr("font-family", 'gravityultralight')
+		.attr("y", -20)
+		.text("Stress:")
+
+	valuetool.selectAll(".ranges")
+		.data(ranges)
+		.enter()
+		.append("text")
+		.attr("class", "ranges")
+		.attr("x", 117)
+		.attr("y", (d,i)=> (i*50)+23)
+		.attr("font-size", 13)
+		.attr("fill", "white")
+		.attr("font-family", 'gravitylight')
+		.text(function (d){return d});
+}

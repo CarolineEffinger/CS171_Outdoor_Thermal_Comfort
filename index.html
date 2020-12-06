@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="css/leaflet.css">
     <link rel="stylesheet" href="css/bootstrap-slider.css">
 
-
     <!-- Own CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -23,16 +22,19 @@
 <div data-spy="affix" id="dot-nav">
     <ul>
         <li class="awesome-tooltip active" title="Home"><a href="#home"></a></li>
-        <li class="awesome-tooltip" title="Warmer"><a href="#getting-warmer"></a></li>
-        <li class="awesome-tooltip" title="Hot"><a href="#too-hot-to-handle"></a></li>
-        <li class="awesome-tooltip" title="Cities"><a href="#cities-are-most-vulnerable"></a></li>
-        <li class="awesome-tooltip" title="Feel"><a href="#how-does-it-feel"></a></li>
-        <li class="awesome-tooltip" title="Comfortable"><a href="#how-hot-is-too-hot"></a></li>
-        <li class="awesome-tooltip" title="When?"><a href="#when-and-where-are-we-comfortable"></a></li>
-        <li class="awesome-tooltip" title="Projection"><a href="#how-hot-is-it-going-to-get"></a></li>
-        <li class="awesome-tooltip" title="Urban"><a href="#the-urban-thermal-experience"></a></li>
-        <li class="awesome-tooltip" title="Mitigation"><a href="#how-can-we-mitigate-for-extreme-conditions"></a></li>
-        <li class="awesome-tooltip" title="Outside"><a href="#too-hot-to-be-outside"></a></li>
+        <li class="awesome-tooltip" title="Getting Warmer"><a href="#getting-warmer"></a></li>
+        <li class="awesome-tooltip" title="Too Hot"><a href="#too-hot-to-handle"></a></li>
+        <li class="awesome-tooltip" title="Vulnerable Cities"><a href="#cities-are-most-vulnerable"></a></li>
+        <li class="awesome-tooltip" title="Exploring Cities"><a href="#how-does-it-feel"></a></li>
+        <li class="awesome-tooltip" title="Comfort Categories"><a href="#how-hot-is-too-hot"></a></li>
+        <li class="awesome-tooltip" title="Comfort: When?"><a href="#when-and-where-are-we-comfortable"></a></li>
+        <li class="awesome-tooltip" title="The Future"><a href="#the-future-projections"></a></li>
+        <li class="awesome-tooltip" title="Projections"><a href="#how-hot-is-it-going-to-get"></a></li>
+        <li class="awesome-tooltip" title="Urban Context"><a href="#the-urban-thermal-experience"></a></li>
+        <li class="awesome-tooltip" title="Design Mitigation"><a href="#how-can-we-mitigate-for-extreme-conditions"></a></li>
+        <li class="awesome-tooltip" title="Global Trend"><a href="#too-hot-to-be-outside"></a></li>
+        <li class="awesome-tooltip" title="Resources"><a href="#resources"></a></li>
+        <li class="awesome-tooltip" title="About this Project"><a href="#acknowledgements"></a></li>
     </ul>
 </div>
 
@@ -59,7 +61,7 @@
                         fewer cold days.
                     </p>
                     <p class="main-text">
-                        Global mean air temperatures are projected to increase by 0.3 to 4.8oC according to the
+                        Global mean air temperatures are projected to increase by 0.3 to 4.8°C according to the
                         Intergovernmental Panel on Climate Change (IPCC) by the end of the 21st century, coupled with
                         variations in solar radiation and wind speeds.
                     </p>
@@ -67,17 +69,18 @@
             </div>
         </article>
     </section>
-    <section id="too-hot-to-handle" style="background-image: url('img/F.jpg'); background-repeat: no-repeat; background-size: 120% 120%;">
+    <section id="too-hot-to-handle"
+             style="background-image: url('img/F.jpg'); background-repeat: no-repeat; background-size: 120% 120%;">
         <article>
             <div class="row">
-                <div class="col-md-12 text-center center">
+                <div class="col-md-12 text-center center" ;>
                     <h1 class="section-title">Too hot to handle...</h1>
                     <p class="main-text">
                         According to the World Health Organization (WHO) heat stresses that are linked to climate change
                         are likely to cause 38,000 additional yearly fatalities worldwide in the coming two decades.
                     </p>
                     <p class="main-text">
-                        All humans must maintain a core temperature close to 37.2oC. Thermal stresses occur when the
+                        All humans must maintain a core temperature close to 37.2°C. Thermal stresses occur when the
                         body is unable to heat/cool itself effectively to maintain this balance. In the presence of high
                         humidity levels, the human body cannot adapt to a hotter condition through sweating for instance
                         which can lead to heat strokes.
@@ -108,12 +111,13 @@
     </section>
     <section id="how-does-it-feel">
         <article>
-            <div class="row">
+            <div class="row" style="height:10vh;">
                 <div class="col-md-12 text-center center-top">
                     <h1 class="section-title">How does it feel outdoors in different cities, regions and climates around
                         the globe?</h1>
                     <p class="main-text">
-                        We have chosen to explore eight different cities that represent a range of climates across the globe.
+                        We have chosen to explore eight different cities that represent a range of climates across the
+                        globe.
                     </p>
                     <p class="map-guide">
                         Use the slider below to explore eight of the world's cities, from cold to hot, and examine
@@ -124,28 +128,36 @@
             <br>
             <div class="row">
                 <!--Filtering for Map Vis-->
-                <div class="col-md-9">
-                    <div style="margin-left: 15vh;">
-                        <input id="mapSlider" style="width: 100%;" type ="text" data-slider-ticks="[1, 2, 3, 4, 5, 6, 7, 8, 9]" data-slider-value = "1" data-slider-ticks-snap-bounds="30" data-slider-ticks-labels='["Entire World View", "Oslo", "Reykjavik", "Berlin", "New York", "San Diego", "Cairo", "Dubai", "Singapore"]'/>
+                <div class="col-md-7">
+                    <div style="height: 5vh; margin-left: 5vw; margin-top: 2vh; width: 80vw;">
+                        <input id="mapSlider" style="width: 80%; font-family: 'gravityregular';" type="text"
+                               data-slider-ticks="[1, 2, 3, 4, 5, 6, 7, 8, 9]" data-slider-value="1"
+                               data-slider-ticks-snap-bounds="30"
+                               data-slider-ticks-labels='["Entire World View", "Reykjavik", "Oslo", "Berlin", "New York", "San Diego", "Cairo", "Singapore", "Dubai"]'/>
                     </div>
                 </div>
             </div>
             <br>
-            <div class="row" style="height: 80vh; padding: 0; margin-left: 20vh; margin-right: 20vh; margin-bottom:10vh;">
-                <div class="col-md-7" , id="map-vis" , style="height: 100%;"></div>
+            <div class="row"
+                 style="height: 50vh; padding: 0; margin-left: 1vw; margin-right: 1vw; margin-bottom:1vh; width: 80vw;">
+                <div class="col-md-6" , id="map-vis" , style="height: 100%;"></div>
                 <div class="col-md-1"></div>
-                <div class="col-md-4" id="map-stats-box" style="height: 25%; margin-top: 30vh; padding-top: 1vh;  padding-bottom: 0vh;  padding-left: 1vh;  padding-right: 1vh; border: thick solid white">
-                    <p id="map-highlight-stats" style="font-size: xx-large; color: white; text-align:center;"></p>
-                    <p id="map-highlight-stats-cold" style="font-size: large; color: white; text-align:center;"></p>
-                    <p id="map-highlight-stats-hot" style="font-size: large; color: white; text-align:center;"></p>
+                <div class="col-md-5"
+                     style="height: 30%; width: 23vw; margin-top: 20vh; padding-top: 1vh;  padding-bottom: 1vh;  padding-left: 1vw;  padding-right: 1vw; border: solid white">
+                    <p id="map-highlight-stats"
+                       style="font-family: 'gravityregular'; width: 20vw; font-size: 22px; color: white; text-align:center;"></p>
+                    <p id="map-highlight-stats-cold"
+                       style="font-family: 'gravitylight'; width: 20vw; font-size: 16px; color: white; text-align:center;"></p>
+                    <p id="map-highlight-stats-hot"
+                       style="font-family: 'gravitylight'; width: 20vw; font-size: 16px; color: white; text-align:center;"></p>
                 </div>
             </div>
         </article>
     </section>
     <section id="how-hot-is-too-hot">
         <article>
-            <div class="row">
-                <div class="col-md-6 text-center center">
+            <div class="row" style="height:30vh;">
+                <div class="col-md-6 center-upt">
                     <h1 class="section-title">How hot is too hot?</h1>
                     <p class="main-text">
                         Among the most comprehensive indices for estimating thermal comfort and stresses in outdoor
@@ -154,18 +166,18 @@
                         combines the air temperature, mean radiant temperature, humidity, and wind speed.
                     </p>
                     <p class="main-text">
-                        We use this scale to model the conditions outdoors, where a ‘felt’ temperature of 9 to 26oC is
+                        We use this scale to model the conditions outdoors, where a ‘felt’ temperature of 9 to 26°C is
                         within a comfortable range.
                     </p>
                 </div>
-                <div class="col-md-6 text-center center">
-                    <img src="img/H.png" alt="UTCI" width="200" height="400"></div>
+                <div class="col-md-3" id="legendID" style="height:35vh; margin-top: 40vh;">
+                </div>
             </div>
         </article>
     </section>
-    <section id="when-and-where-are-we-comfortable">
+    <section id="when-and-where-are-we-comfortable" ; style="height:100vh;">
         <article>
-            <div class="row">
+            <div class="row" style="height:10vh;">
                 <div class="col-md-12 text-center center-top">
                     <h1 class="section-title">When are we comfortable?</h1>
                     <p class="main-text">
@@ -177,11 +189,16 @@
             <br>
             <div class="row">
                 <!--Filtering for City Comfort Vis-->
-                <div class="row" style="padding: 0;">
-                    <div class="col-md-4" style="margin-left: 250px; padding: 0;">
-                        <div class="row justify-content-center" style="height: 100%; padding: 0;">
-                            <select id='cityProfileProjectionSelector' class="custom-select align-self-center"
-                                    style="width: 25%" onchange="cityProfileProjectionChange()">
+                <div class="row" style="height:5vh; margin-left:2vh;">
+                    <div class="col-md-1">
+                        <div class="row">
+                            <p style="color: white; font-family: 'gravityregular'; font-size: 12px;">Projection</p>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="row justify-content-center">
+                            <select id='cityProfileProjectionSelector' class="custom-select align-self-center selector"
+                                    style="width: 75%" onchange="cityProfileProjectionChange()">
                                 <option value="C" selected>Current</option>
                                 <option value="STP">Short-Term Projection</option>
                                 <option value="MTP">Medium-Term Projection</option>
@@ -189,37 +206,76 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-md-4" style="margin-right: 210px; padding: 0;">
-                        <div class="row justify-content-center" style="height: 100%; padding: 0;">
+                    <div class="col-md-1">
+                        <div class="row justify-content-center">
+                            <p style="color: white; font-family: 'gravityregular'; font-size: 12px;">Condition</p>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="row justify-content-center">
                             <select id='cityProfileConditionSelector' class="custom-select align-self-center"
-                                    style="width: 25%" onchange="cityProfileConditionChange()">
-                                <option value="SEWE" selected>Sun Exposed and Wind Exposed</option>
-                                <option value="SEWP">Sun Exposed and Wind Protected</option>
-                                <option value="SPWE">Sun Protected and Wind Exposed</option>
-                                <option value="SPWP">Sun Protected and Wind Protected</option>
+                                    style="width: 75%" onchange="cityProfileConditionChange()">
+                                <option value="SEWE" selected>Sun and Wind</option>
+                                <option value="SEWP">Sun, No Wind</option>
+                                <option value="SPWE">Shade and Wind</option>
+                                <option value="SPWP">Shade, No Wind</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                        <div class="row justify-content-center">
+                            <p style="color: white; font-family: 'gravityregular'; font-size: 12px;">Hour</p>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="row justify-content-center">
+                            <select id='hourSelector' class="custom-select align-self-center"
+                                    style="width: 75%" onchange="hourSelectorChange()">
+                                <option value="HighestHour" selected>Highest Hour</option>
+                                <option value="LowestHour">Lowest Hour</option>
                             </select>
                         </div>
                     </div>
                 </div>
+
                 <!--City Comfort Vis-->
-                <div class="row justify-content-center" style="padding: 0; margin-right: 350px; margin-left: 350px; height: 300px;">
-                    <div class="col-lg-3" , id="city-comfort-dubai" , style=" width: 25%; height: 400px;"></div>
-                    <div class="col-lg-3" , id="city-comfort-singapore" , style=" width: 25%; height: 400px;"></div>
-                    <div class="col-lg-3" , id="city-comfort-cairo" , style=" width: 25%; height: 400px;"></div>
-                    <div class="col-lg-3" , id="city-comfort-san_diego" , style=" width: 25%; height: 400px;"></div>
+                <div class="row justify-content-center" style="height: 30vh; width: 80vw;">
+                    <div class="col-lg-3" , id="city-comfort-dubai" , style=" width: 25%; height: 100%;"></div>
+                    <div class="col-lg-3" , id="city-comfort-singapore" , style=" width: 25%; height: 100%;"></div>
+                    <div class="col-lg-3" , id="city-comfort-cairo" , style=" width: 25%; height: 100%;"></div>
+                    <div class="col-lg-3" , id="city-comfort-san_diego" , style=" width: 25%; height: 100%;"></div>
                 </div>
-                <div class="row justify-content-center" style="padding: 0; margin-right: 350px; margin-left: 350px; height: 300px;">
-                    <div class="col-lg-3" , id="city-comfort-new_york" , style=" width: 25%; height: 400px;"></div>
-                    <div class="col-lg-3" , id="city-comfort-berlin" , style=" width: 25%; height: 400px;"></div>
-                    <div class="col-lg-3" , id="city-comfort-oslo" , style=" width: 25%; height: 400px;"></div>
-                    <div class="col-lg-3" , id="city-comfort-reykjavik" , style=" width: 25%; height: 400px;"></div>
+                <div class="row justify-content-center" style="height: 30vh; width: 80vw;">
+                    <div class="col-lg-3" , id="city-comfort-new_york" , style=" width: 25%; height: 100%;"></div>
+                    <div class="col-lg-3" , id="city-comfort-berlin" , style=" width: 25%; height: 100%;"></div>
+                    <div class="col-lg-3" , id="city-comfort-oslo" , style=" width: 25%; height: 100%;"></div>
+                    <div class="col-lg-3" , id="city-comfort-reykjavik" , style=" width: 25%; height: 100%;"></div>
+                </div>
+            </div>
+        </article>
+    </section>
+    <section id="the-future-projections">
+        <article>
+            <div class="row" style="height:10vh;">
+                <div class="col-md-12 text-center center">
+                    <h1 class="section-title">How is this changing?</h1>
+                    <p class="main-text">
+                        Climate change scenarios have been developed by scientists as a powerful tool to enable the society
+                        to understand what could potentially happen in the future and help guide policies and define targets to mitigate
+                        the expected phenomena.
+                    </p>
+                    <p class="main-text">
+                        Morphing is a method used to integrate current weather data files with results from those climate scenarios
+                        to yield future meteorological conditions. Short-term (2020), medium-term (2050) and long-term (2080) projections are used to explore
+                        that.
+                    </p>
                 </div>
             </div>
         </article>
     </section>
     <section id="how-hot-is-it-going-to-get">
         <article>
-            <div class="row">
+            <div class="row" style="height:10vh;">
                 <div class="col-md-12 text-center center-top">
                     <h1 class="section-title">How hot is going to get?</h1>
                     <p class="main-text">
@@ -236,10 +292,15 @@
             <br>
             <div class="row">
                 <!--Filtering for Dist Vis-->
-                <div class="row">
-                    <div class="col-md-4" style="margin-left: 250px; padding: 0;">
+                <div class="row" style="height: 5vh; padding-left:2vw;">
+                    <div class="col-md-1">
+                        <div class="row">
+                            <p style="color: white; font-family: 'gravityregular'; font-size: 12px;">City</p>
+                        </div>
+                    </div>
+                    <div class="col-md-2" style="height: 5vh; padding-left:2vw;">
                         <div class="row justify-content-center" style="height: 100%">
-                            <select id='distLocSelector' class="custom-select align-self-center" style="width: 25%"
+                            <select id='distLocSelector' class="custom-select align-self-center" style="width: 75%"
                                     onchange="distLocationChange()">
                                 <option value="Berlin" selected>Berlin</option>
                                 <option value="Cairo">Cairo</option>
@@ -252,9 +313,14 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-md-4" style="margin-right: 250px; padding: 0;">
+                    <div class="col-md-1" style="height: 5vh; padding-left:2vw;">
+                        <div class="row justify-content-center">
+                            <p style="color: white; font-family: 'gravityregular'; font-size: 12px;">Projection</p>
+                        </div>
+                    </div>
+                    <div class="col-md-2" style="height: 5vh; padding-left:2vw;">
                         <div class="row justify-content-center" style="height: 100%">
-                            <select id='distProjSelector' class="custom-select align-self-center" style="width: 25%"
+                            <select id='distProjSelector' class="custom-select align-self-center" style="width: 75%"
                                     onchange="distProjectionChange()">
                                 <option value="C" selected>Current Projection</option>
                                 <option value="STP">Short-Term Projection</option>
@@ -265,18 +331,23 @@
                     </div>
                 </div>
             </div>
+            <div class="col-md-1" style="height: 5vh; padding-left:2vw;"></div>
+            <div class="col-md-2" style="height: 5vh; padding-left:2vw;"></div>
+            <div class="col-md-1" style="height: 5vh; padding-left:2vw;"></div>
+            <div class="col-md-2" style="height: 5vh; padding-left:2vw;"></div>
             <br>
+
             <!--Distribution Vis-->
-            <div class="row" style="margin-right: 210px; height: 100vh; margin-left: 210px; padding: 0;">
-                <div class="col-lg-8" , id="distvis" , style=" width: 100%">
+            <div class="row" style="height: 80vh; width: 80vw;">
+                <div class="col-lg-10" , id="distvis" , style=" width: 100%">
                 </div>
             </div>
 
         </article>
     </section>
-    <section id="the-urban-thermal-experience" style="background-image: url('img/A.png');">
+    <section id="the-urban-thermal-experience" style="background-image: url('img/L.jpg'); background-repeat: no-repeat; background-size: 100% 100%;">
         <article>
-            <div class="row">
+            <div class="row" style="height:10vh;">
                 <div class="col-md-12 text-center center">
                     <h1 class="section-title">The urban thermal experience</h1>
                     <p class="main-text">
@@ -295,7 +366,7 @@
     </section>
     <section id="how-can-we-mitigate-for-extreme-conditions">
         <article>
-            <div class="row">
+            <div class="row" style="height:10vh;">
                 <div class="col-md-12 text-center center-top">
                     <h1 class="section-title">How can we mitigate for extreme conditions?</h1>
                     <p class="main-text">
@@ -303,48 +374,80 @@
                         visualization explores the impact of shading and wind flow promotion on the outdoor thermal
                         comfort conditions and thermal stresses in different cities.
                     </p>
-                    <p class="main-text">
+                    <p class="main-text" style="margin-bottom:30px;">
                         How different cities will experience thermal stresses is partially dependent on how adapted and
                         resilient that are designed. But how warm the weather gets remains the largest constraint.
                     </p>
                 </div>
             </div>
             <br>
-            <!--Filtering for Design Decision Vis-->
             <div class="row">
-                <div class="col-md-4" style="margin-left: 250px; padding: 0;">
-                    <div class="row justify-content-center" style="height: 100%">
-                        <select id='desDCitySelector' class="custom-select align-self-center" style="width: 25%"
-                                onchange="desDCityChange()">
-                            <option value="Berlin">Berlin</option>
-                            <option value="Cairo">Cairo</option>
-                            <option value="Dubai">Dubai</option>
-                            <option value="New York">New York</option>
-                            <option value="Oslo">Oslo</option>
-                            <option value="Reykjavik">Reykjavik</option>
-                            <option value="San Diego">San Diego</option>
-                            <option value="Singapore">Singapore</option>
-                        </select>
+                <!--Filtering for City Comfort Vis-->
+                <div class="row" style="height:5vh; margin-left:2vh;">
+                    <div class="col-md-1">
+                        <div class="row">
+                            <p style="color: white; font-family: 'gravityregular'; font-size: 12px;">City</p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-4" style="margin-right: 250px; padding: 0;">
-                    <div class="row justify-content-center" style="height: 100%">
-                        <select id='desDComfortSelector' class="custom-select align-self-center" style="width: 25%"
-                                onchange="desDComfortChange()">
-                            <option value="SEWE" selected>Sun Exposed and Wind Exposed</option>
-                            <option value="SEWP">Sun Exposed and Wind Protected</option>
-                            <option value="SPWE">Sun Protected and Wind Exposed</option>
-                            <option value="SPWP">Sun Protected and Wind Protected</option>
-                        </select>
+                    <div class="col-md-2">
+                        <div class="row justify-content-center">
+                            <select id='desDCitySelector' class="custom-select align-self-center" style="width: 75%"
+                                    onchange="desDCityChange()">
+                                <option value="Berlin">Berlin</option>
+                                <option value="Cairo">Cairo</option>
+                                <option value="Dubai">Dubai</option>
+                                <option value="New York">New York</option>
+                                <option value="Oslo">Oslo</option>
+                                <option value="Reykjavik">Reykjavik</option>
+                                <option value="San Diego">San Diego</option>
+                                <option value="Singapore">Singapore</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                        <div class="row justify-content-center">
+                            <p style="color: white; font-family: 'gravityregular'; font-size: 12px;">Condition</p>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="row justify-content-center">
+                            <select id='viewSelector' class="custom-select align-self-center" style="width: 75%"
+                                    onchange="viewChange()">
+                                <option value="ByCond">By Condition</option>
+                                <option value="ByProj">By Projection</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                        <div class="row justify-content-center">
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="row justify-content-center">
+                        </div>
                     </div>
                 </div>
             </div>
             <br>
-            <div class="row" style="margin-right: 250px; height: 500px; margin-left: 250px; padding: 0;">
-                <div class="col-lg-8" id="design-vis" style="width: 100%">
+            <div class="row" style="width: 78vw;">
+                <div class="col-md-3" style="height: 5vh; padding-left:2vw;">
+                    <div id='sunNoWind'></div>
+                </div>
+                <div class="col-md-3" style="height: 5vh; padding-left:2vw;">
+                    <div id='sunWind'></div>
+                </div>
+                <div class="col-md-3" style="height: 5vh; padding-left:2vw;">
+                    <div id='shadeNoWind'></div>
+                </div>
+                <div class="col-md-3" style="height: 5vh; padding-left:2vw;">
+                    <div id='shadeWind'></div>
                 </div>
             </div>
-
+            <br>
+            <div class="row" style="height:75vh; width: 80vw;">
+                <div class="col-lg-8" id="design-vis" style="height:50vh; width: 100%">
+                </div>
+            </div>
         </article>
     </section>
     <section id="too-hot-to-be-outside">
@@ -365,10 +468,16 @@
             </div>
             <br>
             <!--Filtering for Sankey Vis-->
-            <div class="row" style="height: 10vh; margin-left: 40vh; padding: 0;">
-                <div class="col-md-4">
+            <div class="row" style="height:5vh; margin-left:2vh;">
+                <div class="col-md-1">
+                    <div class="row">
+                        <p style="color: white; font-family: 'gravityregular'; font-size: 12px;">Projection</p>
+                    </div>
+                </div>
+                <div class="col-md-2">
                     <div class="row justify-content-center" style="height: 100%">
-                        <select id='sankeyProjectionSelector' class="custom-select align-self-center" style="width: 75%" onchange="sankeyProjectionChange()">
+                        <select id='sankeyProjectionSelector' class="custom-select align-self-center" style="width: 75%"
+                                onchange="sankeyProjectionChange()">
                             <option value="current" selected>Current Projection</option>
                             <option value="short">Short-Term Projection</option>
                             <option value="medium">Medium-Term Projection</option>
@@ -376,9 +485,15 @@
                         </select>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-1">
+                    <div class="row">
+                        <p style="color: white; font-family: 'gravityregular'; font-size: 12px;">Condition</p>
+                    </div>
+                </div>
+                <div class="col-md-2">
                     <div class="row justify-content-center" style="height: 100%">
-                        <select id='sankeyConditionSelector' class="custom-select align-self-center" style="width: 75%" onchange="sankeyConditionChange()">
+                        <select id='sankeyConditionSelector' class="custom-select align-self-center" style="width: 75%"
+                                onchange="sankeyConditionChange()">
                             <option value="CC_SEWE" selected>Sun and Wind</option>
                             <option value="CC_SEWP">Sun and No Wind</option>
                             <option value="CC_SPWE">No Sun and Wind</option>
@@ -386,20 +501,146 @@
                         </select>
                     </div>
                 </div>
+                <div class="col-md-1">
+                    <div class="row justify-content-center">
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="row justify-content-center">
+                    </div>
+                </div>
             </div>
             <br>
             <!--Sankey Vis with Stats-->
-            <div class="row" style="height: 80vh; padding: 0; margin-left: 20vh; margin-right: 20vh; margin-bottom:10vh;">
-                <div class="col-md-7", id="sankey-vis", class = 'rChart rCharts_d3_sankey', style="height: 100%">
+            <div class="row" style="height: 50vh; margin-left: 2vw; margin-right: 2vw; margin-bottom:10vh;">
+                <div class="col-md-5" , id="sankey-vis" , class='rChart rCharts_d3_sankey' , style="height: 100%">
                 </div>
                 <div class="col-md-1"></div>
-                <div class="col-md-4" id="sankey-vis-stats", style="height: 25%; margin-top: 30vh; padding-top: 2vh;  padding-bottom: 1vh;  padding-left: 1vh;  padding-right: 1vh; border: thick solid white">
-<!--                    <p id="sankey-stat-projection" style="font-size: large; color: white; text-align:center;">Projection: Current</p>-->
-<!--                    <p id="sankey-stat-condition" style="font-size: large; color: white; text-align:center;">Conditions: Sun Exposed and Wind Exposed</p>-->
-                    <p id="sankey-stat-hot" style="font-size: large; color: white; text-align:center;">Percentage of Hours in Strong Heat Stress: <span id='hotVal' style="font-size: xx-large; font-weight: bolder"></span></p>
-                    <p id="sankey-stat-cold" style="font-size: large; color: white; text-align:center;">Percentage of Hours in Strong Cold Stress: <span id='coldVal' style="font-size: xx-large; font-weight: bolder"></span></p>
+                <div class="col-md-2" id="sankey-vis-stats" ,
+                     style="height: 30%; width: 21vw; margin-top: 20vh; margin-right: 24vh; padding-top: 1vh;  padding-bottom: 1vh;  padding-left: 1vw;  padding-right: 1vw; border: solid white">
+                    <!--                    <p id="sankey-stat-projection" style="font-size: large; color: white; text-align:center;">Projection: Current</p>-->
+                    <!--                    <p id="sankey-stat-condition" style="font-size: large; color: white; text-align:center;">Conditions: Sun Exposed and Wind Exposed</p>-->
+                    <p id="sankey-stat-hot"
+                       style="font-family: 'gravitylight'; width: 18vw; font-size: 16px; color: white; text-align:center;">
+                        Percentage of Hours in Strong Heat Stress: <span id='hotVal'
+                                                                         style="font-family: 'gravitybold'; width: 20vw; font-size: 24px;"></span>
+                    </p>
+                    <p id="sankey-stat-cold"
+                       style="font-family: 'gravitylight'; width: 18vw; font-size: 16px; color: white; text-align:center;">
+                        Percentage of Hours in Strong Cold Stress: <span id='coldVal'
+                                                                         style="font-family: 'gravitybold'; width: 20vw; font-size: 24px;"></span>
+                    </p>
                 </div>
             </div>
+        </article>
+    </section>
+    <section id="resources" style="background-image: url('img/M.jpg'); background-repeat: no-repeat; background-size: 100% 100%;">
+        <article>
+            <div class="row" style="height:10vh;">
+                <div class="col-md-6 text-center center">
+                    <h1 class="section-title">What can you do to stay informed and help?</h1>
+                    <p class="main-text">
+                        What we outlined here is a tiny part of a massive puzzle.
+                    </p>
+                    <p class="main-text">
+                        A global threat like climate change will not be faced alone.
+                        We all need to do our part to enable the change our world needs.
+                        Below are many crucial resources in the fight against climate change
+                        ranging from newest United Nations resolutions and organs all the
+                        way to small individual actions in our daily lives.
+                    </p>
+                </div>
+                <!--<div class="col-md-6 text-center center"><img src="img/H.png" alt="UTCI"></div>-->
+            </div>
+            <br>
+            <div></div>
+            <!-- Resources -->
+            <div class="row">
+                <div class="col-md-2">
+                    <h3 id="org sources" style="font-family: 'gravitybold'; font-size: 16px; color: white;">Organizations</h3>
+                    <ul style="font-family: 'gravitylight'; font-size: 14px; color: white;">
+                        <li><a href="https://www.greenpeace.org/international/explore/" style="color: white;">Greenpeace</a></li>
+                        <li><a href="https://www.nature.com/subjects/climate-change" style="color: white;">Nature</a></li>
+                        <li><a href="https://www.nrdc.org/stories/global-climate-change-what-you-need-know" style="color: white;">NRDC</a>
+                        </li>
+                        <li><a href="https://climate.nasa.gov/" style="color: white;">NASA</a></li>
+                    </ul>
+
+                </div>
+                <div class="col-md-2">
+                    <h3 id="int sources" style="font-family: 'gravitybold'; font-size: 16px; color: white;">International Entities</h3>
+                    <ul style="font-family: 'gravitylight'; font-size: 14px; color: white;">
+                        <li><a href="https://www.ipcc.ch/" style="color: white;">IPCC</a></li>
+                        <li><a href="https://www.who.int/health-topics/climate-change#tab=tab_1" style="color: white;">WHO</a></li>
+                        <li><a href="https://unfccc.int/" style="color: white;">UNFCC</a></li>
+                        <li><a href="https://www.un.org/en/climatechange" style="color: white;">UN climate change</a></li>
+                        <li><a href="https://www.unep.org/" style="color: white;">UNEP</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h3 id="ind sources" style="font-family: 'gravitybold'; font-size: 16px; color: white;">Individual Action</h3>
+                    <ul style="font-family: 'gravitylight'; font-size: 14px; color: white;">
+                        <li><a href="https://davidsuzuki.org/what-you-can-do/top-10-ways-can-stop-climate-change/" style="color: white;">10
+                            things to do</a></li>
+                        <li><a href="https://www.bbc.com/future/article/20181102-what-can-i-do-about-climate-change" style="color: white;">What
+                            can I do?</a></li>
+                        <li><a href="https://onlinepublichealth.gwu.edu/resources/sources-for-climate-news/" style="color: white;">NEWS</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+    </section>
+    <section id="acknowledgements">
+        <article>
+            <div class="row" style="height:10vh;">
+                <div class="col-md-6 text-center center-top">
+                    <h1 class="section-title">About this project</h1>
+                    <p class="main-text">
+                        This data story was developed as part of Harvard's Data Visualization course CS171. The motivation behind this project is our strong belief in the importance of climate change and the need for increased awareness among the global community on how it will shape cities and our lives if we choose not to take action. It is also our goal to highlight the role of the urban design choices on mitigating some of those issues.
+                    </p>
+                    <br>
+                    <p class="main-text">
+                        The data narrative is based on data extracted from weather data files which are publicly accessible:
+                        <a href="http://climate.onebuilding.org/" style="color: white; font-family: 'gravityregular';">One Building EPW</a>,
+                        as well as versions morphed for 2020 (short-term), 2050 (medium-term) and 2080 (long-term) using climate change scenarios HadCM3 generated using the
+                        <a href="https://energy.soton.ac.uk/climate-change-world-weather-file-generator-for-world-wide-weather-data-ccworldweathergen/" style="color: white; font-family: 'gravityregular';">CCWorldWeatherGenerator tool</a>
+                    </p>
+                    <br>
+                    <p class="main-text">
+                        The meteorological parameters extracted from those were integrated into the outdoor thermal comfort metric
+                        <a href="https://utci.org/" style="color: white; font-family: 'gravityregular';">Universal Thermal Climate Index (UTCI)</a>
+                        . The latter is a thermal comfort model which estimates the ‘felt temperature’ based on a human heat balance model combining air temperature, mean radiant temperature, humidity, and wind speed.
+                    </p>
+                    <br>
+                    <p class="main-text">
+                        To further explore the process of developing this project, you can download our process book
+                        <a href="/files/process-book.pdf" download="Process Book" style="color: white; font-family: 'gravityregular';">here</a>
+                        and the website repository
+                        <a href="https://github.com/" style="color: white; font-family: 'gravityregular';">here</a>
+                    </p>
+                    <br>
+                    <p class="main-text">Thank you to the CS171 teaching team for the invaluable support throughout the course.</p>
+                    <br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-1" style="margin-top: 30vh;">
+                </div>
+                <div class="col-md-3">
+                    <h3 style="font-family: 'gravitybold'; font-size: 16px; color: white;">Caroline Stedman Effinger</h3>
+                    <p style="font-family: 'gravityultralight'; font-size: 14px; color: white;">cstedman@g.harvard.edu</p>
+                </div>
+                <div class="col-md-3">
+                    <h3 style="font-family: 'gravitybold'; font-size: 16px; color: white;">Sarah Mokhtar</h3>
+                    <p style="font-family: 'gravityultralight'; font-size: 14px; color: white;">smokhtar@mit.edu</p>
+                </div>
+                <div class="col-md-3">
+                    <h3 style="font-family: 'gravitybold'; font-size: 16px; color: white;">Steven Walz</h3>
+                    <p style="font-family: 'gravityultralight'; font-size: 14px; color: white;">stevenwalz@college.harvard.edu</p>
+                </div>
+            </div>
+
         </article>
     </section>
 </div>
@@ -436,6 +677,10 @@
 
 <!-- leaflet-->
 <script src="js/leaflet.js"></script>
+
+<!-- slider-->
+
+<script src="https://unpkg.com/d3-simple-slider"></script>
 
 <!-- Visualization objects -->
 <script src="js/cityComfortProfile.js"></script>
